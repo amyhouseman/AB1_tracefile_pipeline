@@ -1,0 +1,19 @@
+#Quality Control#
+
+#Install Cutadapt 
+sudo apt install cutadapt
+
+#Alignment
+#Install Burrows-Wheeler Alignment(BWA)tool 
+sudo apt install bwa
+
+#Install SAMtools
+sudo apt install samtools
+
+#Detect Variants
+#Install BCFtools
+sudo apt install bcftools 
+
+#Visualise Variants
+#Download IGVtools from 
+https://software.broadinstitute.org/software/igv/igvtools
