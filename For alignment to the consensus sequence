@@ -1,0 +1,24 @@
+#Alignment#
+
+#Index consensus sequence
+bwa index consensus.fasta
+#consensus.fasta = consensus sequence retrieved from consensus 
+sequence database. 
+#This command must be executed within the file where the index is 
+wanting to be deposited. 
+
+#Short read local alignment
+bwa mem consensus.fasta trimmed.fasta 
+#bwa mem = align trimmed.fasta against reference.fasta
+
+#Convert SAM to BAM file
+samtools view -b -S output.sam > output.bam
+# -b = .bam file input
+#- S = .sam file input
+# > output.sam = convert the alignment into a .sam file
+
+#Sort BAM file based on chromosomal locations
+samtools sort output.bam sorted.bam 
+
+#index bam file
+samtools index sorted.bam
