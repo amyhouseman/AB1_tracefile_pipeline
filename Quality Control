@@ -1,0 +1,18 @@
+#Quality Control
+
+#Remove bases from the start and end of the FASTA Sanger sequences, 
+after manual quality control check##
+
+cutadapt -u number -o trimmed.fasta reads.fasta
+# -u = unconditionally remove 
+# number = number of bases at the start of the sequence to remove
+# -o = output file 
+# trimmed.fasta = output file
+# reads.fasta = fasta file which needs trimming 
+
+cutadapt -u -number -o trimmed.fasta reads.fasta
+# -u = unconditionally remove 
+# -number = number of bases at the end of the sequence to remove
+# -o = output file 
+# trimmed.fasta = output file
+# reads.fasta = fasta file which needs trimming 
