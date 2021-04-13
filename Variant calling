@@ -1,0 +1,22 @@
+#Variant Calling#
+
+#Generate genotype likelihoods at genomic locations
+bcftools mpileup -Ou -f consensus.fasta -o output.bcf output.bam 
+# -Ou = output will be uncompressed BCF format
+# -f = indexed consensus FASTA file will be used against the input sorted bam file.
+
+#Call SNPs/Indels between the alignment
+bcftools call -m -v -Ou -o outputcall.bam output.bcf
+# -m = default calling method 
+# -v = only output variant sites
+#-Ou = output will be uncompressed BCF format
+#-o = output 
+
+#View variant locations
+bcftools view outputcall.bam > viewcall.vcf
+
+#Normalise and left align BCF file to consensus
+bcftools norm -Ou -f consensus.fasta -d all -o outputnorm.bam outputcall.bam 
+# -Ou = output will be uncompressed BCF format
+# -f = indexed consensus FASTA file will be used
+# -d = only output the first recorded SNP/indels if presented multiple times.
