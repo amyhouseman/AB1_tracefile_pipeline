@@ -1,0 +1,6 @@
+#Visualisation of variants within the alignment#
+
+#Move to the directory where IGVtools is downloaded. 
+./igvtools.sh 
+#.create genome using consensus.fasta
+#Upload sorted.bam file of alignment
