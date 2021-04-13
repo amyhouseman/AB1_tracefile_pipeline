@@ -4,8 +4,7 @@
 bwa index consensus.fasta
 #consensus.fasta = consensus sequence retrieved from consensus 
 sequence database. 
-#This command must be executed within the file where the index is 
-wanting to be deposited. 
+#This command must be executed within the file where the index is wanting to be deposited. 
 
 #Short read local alignment
 bwa mem consensus.fasta trimmed.fasta 
